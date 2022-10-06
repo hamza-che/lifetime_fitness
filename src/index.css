@@ -13,3 +13,8 @@ h4,
 h5 {
   font-family: 'Oswald', sans-serif;
 }
+
+input:focus,
+input:focus-within {
+  outline: none;
+}

@@ -52,7 +52,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/login"
-                  className="border-2 border-light rounded text-light px-2 py-1"
+                  className="border-4 border-light rounded text-light px-2 py-1"
                 >
                   LOG IN
                 </Link>

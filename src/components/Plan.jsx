@@ -1,16 +1,29 @@
 import React from "react";
+import { SignupFormContextConsumer } from "../contexts/SignupFormContext";
 // Data
 import plansData from "../data/plansData";
+// Icons
 import checkedIcon from "../assets/icons/checked.svg";
 
-const Plan = ({ planName }) => {
+const Plan = ({ planName, cursor, onClick }) => {
+  const { selectPlan } = SignupFormContextConsumer();
+
   return (
-    <div className="bg-dark-600 w-fit rounded-md py-8">
+    <div
+      className={
+        cursor == "pointer" ? (
+          `bg-dark-600 w-fit rounded-md py-8 mt-5 cursor-pointer`
+        ) : (
+          "bg-dark-600 w-fit rounded-md py-8 mt-5"
+        )
+      }
+      onClick={() => (onClick ? selectPlan(planName) : null)}
+    >
       {plansData.map(plan => {
         const { id, name, bg, price, features } = plan;
         return name === planName ? (
-          <React.Fragment>
-            <div className="text-center pb-6" key={id}>
+          <React.Fragment key={id}>
+            <div className="text-center pb-6">
               <span className="text-6xl font-bold">
                 {price}
                 <span className="text-3xl">$</span>
