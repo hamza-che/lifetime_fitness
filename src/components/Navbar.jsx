@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useRef, useState } from "react";
 import { Transition } from "@headlessui/react";
 import logo from "../assets/images/logo.svg";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [ isOpen, setIsOpen ] = useState(false);
+  const ref = useRef();
 
   return (
     <nav className="bg-dark">
@@ -115,52 +116,50 @@ const Navbar = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        {ref => (
-          <div className="lg:hidden" id="mobile-menu">
-            <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link
-                to="/about"
-                className="hover:bg-gray-700 text-light block px-3 py-2 rounded-md text-base font-medium"
-              >
-                ABOUT
-              </Link>
+        <div className="lg:hidden" id="mobile-menu" ref={ref}>
+          <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <Link
+              to="/about"
+              className="hover:bg-gray-700 text-light block px-3 py-2 rounded-md text-base font-medium"
+            >
+              ABOUT
+            </Link>
 
-              <Link
-                to="/discover"
-                className="text-light block px-3 py-2 rounded-md text-base font-medium"
-              >
-                DISCOVER
-              </Link>
+            <Link
+              to="/discover"
+              className="text-light block px-3 py-2 rounded-md text-base font-medium"
+            >
+              DISCOVER
+            </Link>
 
-              <Link
-                tp="/discover"
-                className="text-light block px-3 py-2 rounded-md text-base font-medium"
-              >
-                MEMBERS PLANS
-              </Link>
+            <Link
+              to="/"
+              className="text-light block px-3 py-2 rounded-md text-base font-medium"
+            >
+              MEMBERS PLANS
+            </Link>
 
-              <Link
-                to="/discover"
-                className="text-light block px-3 py-2 rounded-md text-base font-medium"
-              >
-                CONTACT US
-              </Link>
+            <Link
+              to="/contact-us"
+              className="text-light block px-3 py-2 rounded-md text-base font-medium"
+            >
+              CONTACT US
+            </Link>
 
-              <Link
-                to="discover"
-                className="text-light block px-3 py-2 rounded-md text-base font-medium mb-2"
-              >
-                BECOME A PARTNER
-              </Link>
-              <Link
-                to="/login"
-                className="border-2 border-light rounded text-light px-2 py-1 text-base font-medium ml-2 mt-6 inline-block"
-              >
-                LOG IN
-              </Link>
-            </div>
+            <Link
+              to="/become-a-partner"
+              className="text-light block px-3 py-2 rounded-md text-base font-medium mb-2"
+            >
+              BECOME A PARTNER
+            </Link>
+            <Link
+              to="/login"
+              className="border-2 border-light rounded text-light px-2 py-1 text-base font-medium ml-2 mt-6 inline-block"
+            >
+              LOG IN
+            </Link>
           </div>
-        )}
+        </div>
       </Transition>
     </nav>
   );

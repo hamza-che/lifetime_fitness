@@ -14,7 +14,6 @@ function App() {
   return (
     <React.Fragment>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<MembersPlans />} />
         <Route path="/about" element={<About />} />

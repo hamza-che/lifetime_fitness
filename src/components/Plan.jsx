@@ -12,9 +12,9 @@ const Plan = ({ planName, cursor, onClick }) => {
     <div
       className={
         cursor == "pointer" ? (
-          `bg-dark-600 w-fit rounded-md py-8 mt-5 cursor-pointer`
+          `bg-dark-600 text-light w-fit rounded-md py-8 mt-5 cursor-pointer`
         ) : (
-          "bg-dark-600 w-fit rounded-md py-8 mt-5"
+          "bg-dark-600 text-light w-fit rounded-md py-8 mt-5"
         )
       }
       onClick={() => (onClick ? selectPlan(planName) : null)}

@@ -1,5 +1,6 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import ReCAPTCHA from "react-google-recaptcha";
 import { SignupFormContextConsumer } from "../contexts/SignupFormContext";
 // Data
 import plansData from "../data/plansData";
@@ -31,8 +32,12 @@ const SignupForm = () => {
     selectedPlan,
   } = SignupFormContextConsumer();
 
+  const onChange = value => {
+    console.log("Captcha value:", value);
+  };
+
   return (
-    <form className="max-w-sm">
+    <form className="max-w-sm" onSubmit={e => e.preventDefault()}>
       {/* Name */}
       <div className="flex flex-col sm:flex-row gap-2">
         <input
@@ -116,11 +121,11 @@ const SignupForm = () => {
           <img src={uncheckedIcon} alt="unchecked" />
           <span>Uppercase letters</span>
         </li>
-        <li className="flex gap-2 my-2">
+        <li className="flex gap-2 my-2 text-dark-400">
           <img src={checkedIcon} alt="checked" />
           <span>Lowercase letters</span>
         </li>
-        <li className="flex gap-2">
+        <li className="flex gap-2 text-dark-400">
           <img src={checkedIcon} alt="checked" />
           <span>Numbers</span>
         </li>
@@ -136,16 +141,19 @@ const SignupForm = () => {
           className="max-w-sm px-2 py-3 bg-dark-800 text-light rounded w-full placeholder:text-dark-400 focus:outline focus:outline-green focus:placeholder:text-green"
         />
       </div>
-      <div className="bg-dark-600 text-dark-400 py-4 px-2 my-3">reCAPTCHA</div>
+      <div className="flex justify-center items-center my-3">
+        <ReCAPTCHA sitekey="6Le82l4iAAAAAEL5OGkzbrnJDYvXmN8tvyUsvZDV" />
+      </div>
       {plansData.map(
         plan =>
           plan.name === selectedPlan ? (
-            <a
-              href="#"
-              className="bg-green text-white py-3 px-2 block rounded text-center my-3"
+            <button
+              key={plan.id}
+              type="submit"
+              className="bg-green text-white py-3 px-2 block w-full rounded text-center my-3"
             >
               SIGN UP FOR {plan.price}$
-            </a>
+            </button>
           ) : null
       )}
       <a

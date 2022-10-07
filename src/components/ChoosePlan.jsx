@@ -1,6 +1,4 @@
-import React from "react";
 import ReactDOM from "react-dom";
-import { SignupFormContextConsumer } from "../contexts/SignupFormContext";
 import Plan from "./Plan";
 
 const ChoosePlan = ({ isOpen, onClose }) => {
