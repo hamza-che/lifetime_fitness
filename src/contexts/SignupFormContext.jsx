@@ -4,7 +4,6 @@ import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 const SignupFormContext = createContext();
 
 const SignupFormContextProvider = ({ children }) => {
-  const [ isModalOpen, setIsModalOpen ] = useState(false);
   const [ firstName, setFirstName ] = useState("");
   const [ lastName, setLastName ] = useState("");
   const [ email, setEmail ] = useState("");
@@ -14,7 +13,6 @@ const SignupFormContextProvider = ({ children }) => {
   const [ passwordInputType, setPasswordInputType ] = useState("password");
   const [ passwordInputIcon, setPasswordinputIcon ] = useState(<BsEyeFill />);
   const [ selectedDate, setSelectedDate ] = useState(new Date("29-April-2001"));
-  const [ selectedPlan, setSelectedPlan ] = useState("gold");
 
   const showHidePassword = () => {
     if (passwordInputType === "password") {
@@ -24,15 +22,6 @@ const SignupFormContextProvider = ({ children }) => {
       setPasswordInputType("password");
       setPasswordinputIcon(<BsEyeFill />);
     }
-  };
-
-  const onModalClose = () => {
-    setIsModalOpen(false);
-  };
-
-  const selectPlan = plan => {
-    setSelectedPlan(plan);
-    setIsModalOpen(false);
   };
 
   return (
@@ -57,11 +46,6 @@ const SignupFormContextProvider = ({ children }) => {
         passwordInputIcon,
         setPasswordinputIcon,
         showHidePassword,
-        isModalOpen,
-        setIsModalOpen,
-        onModalClose,
-        selectedPlan,
-        selectPlan,
       }}
     >
       {children}

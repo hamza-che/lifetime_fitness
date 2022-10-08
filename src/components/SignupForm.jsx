@@ -1,7 +1,9 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ReCAPTCHA from "react-google-recaptcha";
+// Contexts
 import { SignupFormContextConsumer } from "../contexts/SignupFormContext";
+import { MembersPlansContextConsumer } from "../contexts/MembersPlansContext";
 // Data
 import plansData from "../data/plansData";
 // Icons
@@ -28,9 +30,9 @@ const SignupForm = () => {
     passwordInputType,
     passwordInputIcon,
     showHidePassword,
-    setIsModalOpen,
-    selectedPlan,
   } = SignupFormContextConsumer();
+
+  const { setIsModalOpen, selectedPlan } = MembersPlansContextConsumer();
 
   const onChange = value => {
     console.log("Captcha value:", value);

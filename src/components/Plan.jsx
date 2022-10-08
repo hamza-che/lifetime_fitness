@@ -1,12 +1,12 @@
 import React from "react";
-import { SignupFormContextConsumer } from "../contexts/SignupFormContext";
+import { MembersPlansContextConsumer } from "../contexts/MembersPlansContext";
 // Data
 import plansData from "../data/plansData";
 // Icons
 import checkedIcon from "../assets/icons/checked.svg";
 
 const Plan = ({ planName, cursor, onClick }) => {
-  const { selectPlan } = SignupFormContextConsumer();
+  const { selectPlan } = MembersPlansContextConsumer();
 
   return (
     <div

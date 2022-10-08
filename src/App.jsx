@@ -9,6 +9,7 @@ import MembersPlans from "./pages/MembersPlans";
 import ContactUs from "./pages/ContactUs";
 import BecomePartner from "./pages/BecomePartner";
 import Login from "./pages/Login";
+import { SignupFormContextProvider } from "./contexts/SignupFormContext";
 
 function App() {
   return (

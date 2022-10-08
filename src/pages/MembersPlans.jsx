@@ -1,5 +1,5 @@
 import React from "react";
-import { SignupFormContextConsumer } from "../contexts/SignupFormContext";
+import { MembersPlansContextConsumer } from "../contexts/MembersPlansContext";
 // Images
 import womanPic from "../assets/images/woman.svg";
 import linesPic from "../assets/images/topographic_6.svg";
@@ -13,7 +13,7 @@ const MembersPlans = () => {
     isModalOpen,
     onModalClose,
     selectedPlan,
-  } = SignupFormContextConsumer();
+  } = MembersPlansContextConsumer();
 
   return (
     <section className="bg-dark text-white min-h-screen relative py-6">
@@ -27,7 +27,7 @@ const MembersPlans = () => {
         alt="Lines background"
         className="absolute left-0 top-0 max-h-full"
       />
-      <div className="container flex justify-center lg:justify-start items-center gap-24 flex-wrap relative">
+      <div className="max-w-7xl container mx-auto px-4 sm:px-6 lg:px-12 xl:px-0 flex justify-center lg:justify-start items-center gap-24 flex-wrap relative">
         <div className="text-center">
           <div className="max-w-sm mb-4">
             <h1 className="uppercase font-bold text-5xl mb-2">
