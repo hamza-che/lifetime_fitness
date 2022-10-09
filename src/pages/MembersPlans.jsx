@@ -7,6 +7,7 @@ import linesPic from "../assets/images/topographic_6.svg";
 import Plan from "../components/Plan";
 import SignupForm from "../components/SignupForm";
 import ChoosePlan from "../components/ChoosePlan";
+import IntercomHelp from "../components/IntercomHelp";
 
 const MembersPlans = () => {
   const {
@@ -50,6 +51,7 @@ const MembersPlans = () => {
         </div>
       </div>
       <ChoosePlan isOpen={isModalOpen} onClose={onModalClose} />
+      <IntercomHelp />
     </section>
   );
 };

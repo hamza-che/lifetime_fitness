@@ -9,7 +9,7 @@ import MembersPlans from "./pages/MembersPlans";
 import ContactUs from "./pages/ContactUs";
 import BecomePartner from "./pages/BecomePartner";
 import Login from "./pages/Login";
-import { SignupFormContextProvider } from "./contexts/SignupFormContext";
+import Help from "./pages/Help";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/become-a-partner" element={<BecomePartner />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/help" element={<Help />} />
       </Routes>
     </React.Fragment>
   );
