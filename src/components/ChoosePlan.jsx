@@ -12,16 +12,18 @@ const ChoosePlan = ({ isOpen, onClose }) => {
         X
       </button>
       <div>
-        <h2 className="text-3xl font-bold uppercase">Select another plan</h2>
-        <p className="text-md">
-          Pay one subscription and visit different gyms. Use our app as a ticket
-          to the gyms.
+        <h2 className="text-3xl font-bold uppercase mb-4">
+          Select another plan
+        </h2>
+        <p className="text-md font-semibold">
+          Pay one subscription and visit different gyms. <br /> Use our app as a
+          ticket to the gyms.
         </p>
       </div>
       <div className="flex justify-center items-center flex-col lg:flex-row gap-4 text-white">
-        <Plan planName="bronze" cursor="pointer" onClick={true} />
-        <Plan planName="silver" cursor="pointer" onClick={true} />
-        <Plan planName="gold" cursor="pointer" onClick={true} />
+        <Plan planName="bronze" isSelectPlanBtn={true} />
+        <Plan planName="silver" isSelectPlanBtn={true} />
+        <Plan planName="gold" isSelectPlanBtn={true} />
       </div>
     </div>,
     document.getElementById("modal")

@@ -111,7 +111,7 @@ const SignupForm = () => {
           className="max-w-sm px-2 py-3 bg-dark-800 text-light rounded w-full placeholder:text-dark-400 focus:outline focus:outline-green focus:placeholder:text-green"
         />
         <span
-          className="absolute right-0 top-4 w-8 h-8 text-dark-400"
+          className="absolute right-0 top-4 w-8 h-8 text-dark-400 cursor-pointer"
           onClick={showHidePassword}
         >
           {passwordInputIcon}

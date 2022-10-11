@@ -5,20 +5,11 @@ import plansData from "../data/plansData";
 // Icons
 import checkedIcon from "../assets/icons/checked.svg";
 
-const Plan = ({ planName, cursor, onClick }) => {
+const Plan = ({ planName, isSelectPlanBtn }) => {
   const { selectPlan } = MembersPlansContextConsumer();
 
   return (
-    <div
-      className={
-        cursor == "pointer" ? (
-          `bg-dark-600 text-light w-fit rounded-md py-8 mt-5 cursor-pointer`
-        ) : (
-          "bg-dark-600 text-light w-fit rounded-md py-8 mt-5"
-        )
-      }
-      onClick={() => (onClick ? selectPlan(planName) : null)}
-    >
+    <div className="bg-dark-600 text-light w-fit rounded-md py-8 mt-5">
       {plansData.map(plan => {
         const { id, name, bg, price, features } = plan;
         return name === planName ? (
@@ -43,6 +34,15 @@ const Plan = ({ planName, cursor, onClick }) => {
                 </li>
               ))}
             </ul>
+            {isSelectPlanBtn ? (
+              <a
+                href="#"
+                className="text-white bg-green py-3 px-6 mt-4 mb-6 rounded text-center block w-fit mx-auto"
+                onClick={() => selectPlan(planName)}
+              >
+                SELECT PLAN
+              </a>
+            ) : null}
             <a href="#" className="text-green text-center block w-fit mx-auto">
               Discover related gyms
             </a>
